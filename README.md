@@ -6,7 +6,7 @@ The files encrypt before send and decrypt at the server.
 
 ## server
 * Developed with python 3.9.9.
-* Support multi clients by using multythreading
+* Support multi clients by using multithreading
 * used Crypto library for encrypt and decrypt
 
 ## client
