@@ -3,7 +3,7 @@
 
 ## About
 
-In this project I implemented a server software in C++ for backing up and retrieving files, as well as a client software in Python that works with it.
+
 
 ## Structure
 
@@ -62,9 +62,9 @@ The server receives a request and begins to parse it according to the fields abo
 ## Example
 
 ### Server side 
-![image](https://user-images.githubusercontent.com/72566563/186453021-eb279a0f-8cfe-444a-8ee4-e0eb05047d2e.png)
+
 
 
 ### Client side
-![image](https://user-images.githubusercontent.com/72566563/186453115-886bc44e-0555-4559-814a-42f1f7481d47.png)
+
 
