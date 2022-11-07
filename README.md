@@ -1,19 +1,20 @@
 # C++ and Python Project: Backup Server & Client
 
 ## About
-This project represents a backup server .Each client can register to the server and send files.The server recieves the files and stores them in a uniqe file path for each client.
+This project represents a backup server .Each client can register to the server and send files.The server recieves the files and stores them in a unique
+file path for each client.
 The files are  encrypted before sending and decrypted within the server. 
 
 ## Server
 * Developed with python 3.9.9.
-* Support multi clients by using multithreading
-* used Crypto library for encrypt and decrypt
+* Supports multiclient by  multithreading
+* Applied Crypto library for encryption and decryption
 
 ## Client
 * Developed with Visual Studio 2019.
-* Client code written with ISO C++14 Standard. (Default by Visual Studio 2019).
+* Client code written with ISO C++14 Standard (Default by Visual Studio 2019).
 * Crypto++ Library 8.5 is used. https://www.cryptopp.com
-* <b>These instructions apply for x64 configuration. Upon loading .sln, use x86 build!</b>
+* <b>These instructions apply for x64 configuration, upon loading .sln, use x86 build!</b>
 
 ## Configure cryptopp
 
@@ -117,7 +118,7 @@ The files are  encrypted before sending and decrypted within the server.
 |AES encrypted| dynamic | AES encrypted |
 
 
-#### respond 2103 recieved fix cksum
+#### respond 2103 recieved fix checksum
 
 | Field | Size | Meaning |
 |---------|---------|---------|
@@ -127,7 +128,7 @@ The files are  encrypted before sending and decrypted within the server.
 |file name| 16 bytes | Cksum |
 
 ## The Algorithm
-Client can ask for register , if he exist in DB the server will respond him that he exist. Then the client generate RSA keys and send the public key to server.
-The server gets the pubkey , generate simetric AES key and encrypt it with RSA key.The client get the AES key decrypt it ans save it.
-Meanwhile the server always update the AES ans RSA keys of each client at DB , the client encrypt desired file with the AES key and send it to server.
-The server decrypt file content and save it on local backup folder, calculate cksum and send back to client.Client check server cksum with his cksum , if equal he update the server that the file is good, if not equal the client try resend file . If there is 3 time error with cksum , the file will be deleted from beckup and the server will respond that file wasnt backuped .
+Client can register to the server. If he exists in the database the server will respond to him that he exist, otherwise the server will generate a unique id for the client and respond to him with it. Then the client generates RSA keys and sends the public key to server.
+The server gets the public key , generates simetric AES key and encrypts it with RSA key. The client gets the AES key and decrypts it and saves it.
+Meanwhile the server always updates the AES ans RSA keys of each client in the database, the client encrypts desired file with the AES key and sends it to server.
+The server decrypts the file content and saves it on a local backup folder, calculates checksum and sends back to the client. Client examines server checksum with his checksum. If they are equal he updates the server that the file is "good", if they are not equal, the client tries to resend the file. If there is an error with the checksum 3 times, the file will be deleted from backup and the server will respond that the file was not backed up.
