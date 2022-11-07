@@ -1,21 +1,21 @@
 # C++ and Python Project: Backup Server & Client
 
 ## About
-The project represent a backup server , each client can register and send file . The server get the files and store it in uniq file path for each client.
-The files encrypt before send and decrypt at the server. 
+This project represents a backup server .Each client can register to the server and send files.The server recieves the files and stores them in a uniqe file path for each client.
+The files are  encrypted before sending and decrypted within the server. 
 
-## server
+## Server
 * Developed with python 3.9.9.
 * Support multi clients by using multithreading
 * used Crypto library for encrypt and decrypt
 
-## client
+## Client
 * Developed with Visual Studio 2019.
 * Client code written with ISO C++14 Standard. (Default by Visual Studio 2019).
 * Crypto++ Library 8.5 is used. https://www.cryptopp.com
 * <b>These instructions apply for x64 configuration. Upon loading .sln, use x86 build!</b>
 
-## configure cryptopp
+## Configure cryptopp
 
  Get Crypto++
 * Download the copy of Crypto++ for Windows platform via https://www.cryptopp.com/#download. (ZIP).
