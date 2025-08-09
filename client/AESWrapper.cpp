@@ -1,5 +1,5 @@
 #include "AESWrapper.h"
-
+#include <string.h>
 #include <modes.h>
 #include <aes.h>
 #include <filters.h>
@@ -66,3 +66,4 @@ std::string AESWrapper::decrypt(const char* cipher, unsigned int length)
 
 	return decrypted;
 }
+
